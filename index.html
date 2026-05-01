@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sulaiman | Head of R&D | Backend Architect</title>
+  <title>Sulaiman Allemyar | Head of R&D | Backend Architect</title>
   <style>
     :root {
       --bg: #f8fafc;
@@ -107,16 +107,28 @@
       border-radius: 24px;
       padding: 28px;
       box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+      text-align: center;
+    }
+
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 4px solid var(--accent-soft);
     }
 
     .profile-card h2 {
       font-size: 20px;
       margin-bottom: 16px;
+      text-align: left;
     }
 
     .profile-card p {
       color: var(--muted);
       margin-bottom: 10px;
+      text-align: left;
     }
 
     section {
@@ -171,6 +183,27 @@
       color: #334155;
       font-size: 14px;
       font-weight: 600;
+    }
+
+    .tech-list {
+      list-style: none;
+      margin-top: 12px;
+    }
+
+    .tech-list li {
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: var(--muted);
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 4px;
+    }
+
+    .tech-list li strong {
+      color: var(--text);
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     .project {
@@ -231,7 +264,7 @@
     <div class="container hero">
       <div>
         <span class="eyebrow">Backend Engineering • Banking Systems • R&D Leadership</span>
-        <h1>Sulaiman</h1>
+        <h1>Sulaiman Allemyar</h1>
         <p class="subtitle">
           Head of Research & Development leading distributed engineering teams across multiple locations,
           specializing in backend architecture, financial systems, microservices, and large-scale integrations.
@@ -244,6 +277,7 @@
       </div>
 
       <aside class="profile-card">
+        <img src="images/profile.png" alt="Sulaiman Allemyar" class="profile-img">
         <h2>Profile</h2>
         <p><strong>Role:</strong> Head of R&D</p>
         <p><strong>Focus:</strong> Backend systems, banking integrations, transaction workflows</p>
@@ -258,7 +292,8 @@
       <p class="section-intro">
         I lead cross-functional engineering teams (backend, frontend, and mobile) across multiple locations,
         building financial platforms with a focus on reliability, scalability, and regulatory compliance.
-        My work includes core banking integrations, EMI systems, SMS banking solutions, and microservice architectures.
+        My work includes core banking integrations, EMI systems, PCI-SSF standards implementation, AWS HSM integration, 
+        and high-availability messaging protocols like ISO 8583.
       </p>
     </section>
 
@@ -302,6 +337,8 @@
           <p>Building transaction workflows, accounting logic, commission handling, and core banking integrations.</p>
           <div class="tag-list">
             <span class="tag">CBS Integration</span>
+            <span class="tag">ISO 8583</span>
+            <span class="tag">PCI-SSF</span>
             <span class="tag">Transactions</span>
             <span class="tag">Audit Logs</span>
           </div>
@@ -316,6 +353,62 @@
             <span class="tag">Cross-Functional</span>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="tech-stack">
+      <h2 class="section-title">Backend Architecture Stack</h2>
+      <p class="section-intro">
+        Comprehensive technology stack utilized for building resilient, scalable, and secure financial systems.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h3>Core Backend</h3>
+          <ul class="tech-list">
+            <li><strong>Language</strong> Java 17</li>
+            <li><strong>Framework</strong> Spring Boot 3.2.5 / 3.5.3</li>
+            <li><strong>Database</strong> MySQL 8.4+</li>
+            <li><strong>ORM & Data</strong> Hibernate 6.4, Spring Data JPA, Liquibase</li>
+            <li><strong>Build Tool</strong> Maven</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Security & Architecture</h3>
+          <ul class="tech-list">
+            <li><strong>Authentication</strong> Spring Security, JWT, OAuth2</li>
+            <li><strong>Microservices</strong> Spring Cloud (K8s Client, Feign, Load Balancer)</li>
+            <li><strong>API Standards</strong> RESTful, OpenAPI 3.0 (Swagger)</li>
+            <li><strong>Message Broker</strong> Apache Kafka (Event-driven)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Storage & Performance</h3>
+          <ul class="tech-list">
+            <li><strong>File Storage</strong> MinIO (S3-compatible)</li>
+            <li><strong>Caching</strong> Redis, Ehcache, JCache</li>
+            <li><strong>Resilience</strong> Bucket4j (Rate Limiting)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>DevOps & Monitoring</h3>
+          <ul class="tech-list">
+            <li><strong>Infrastructure</strong> Docker, Docker Compose, Kubernetes</li>
+            <li><strong>Observability</strong> Prometheus, Actuator, Micrometer</li>
+            <li><strong>Logging</strong> Logstash, Logback</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Specialized Libraries</h3>
+          <ul class="tech-list">
+            <li><strong>Mapping & Tools</strong> MapStruct, Lombok</li>
+            <li><strong>Payment Tools</strong> AWS SDK (Payment Cryptography), ZXing (QR Codes)</li>
+            <li><strong>Document Processing</strong> Apache POI (Excel), OpenHTMLtoPDF (PDF Generation)</li>
+            <li><strong>Error Handling</strong> Zalando Problem Spring Web</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -347,7 +440,7 @@
       <article class="card project">
         <div>
           <h3>EMI Integration with Central Bank</h3>
-          <p class="project-meta">Regulatory Integration • Payments • Compliance</p>
+          <p class="project-meta">Regulatory Integration • Payments • AWS HSM • PCI-SSF</p>
         </div>
         <div>
           <p>
@@ -355,8 +448,9 @@
             ensuring compliance with regulatory requirements and secure financial data exchange.
           </p>
           <ul>
-            <li>Handled complex regulatory and integration requirements.</li>
-            <li>Ensured secure communication and transaction validation.</li>
+            <li>Implemented AWS CloudHSM for secure cryptographic operations and key management.</li>
+            <li>Led the implementation and alignment of PCI-SSF (Software Security Framework) standards.</li>
+            <li>Handled complex regulatory and integration requirements for secure communication.</li>
             <li>Delivered production-ready systems aligned with central bank standards.</li>
           </ul>
         </div>
@@ -397,15 +491,15 @@
       <p class="section-intro">
         Interested in backend architecture, financial platforms, or engineering leadership discussions?
       </p>
-      <p>Email: <a href="mailto:sulaiman.allemyar@parsa.technology">sulaiman.allemyar@parsa.technology</a></p>
-      <p>GitHub: <a href="https://github.com/your-username" target="_blank">github.com/your-username</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a></p>
+      <p>Email: <a href="mailto:sulaiman.allemyar@parsa.technology">sulaiman.allemyar@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/sulaimanallemyar" target="_blank">github.com/sulaimanallemyar</a></p>
+      <p>LinkedIn: <a href="https://af.linkedin.com/in/sulaiman-allemyar" target="_blank">https://af.linkedin.com/in/sulaiman-allemyar</a></p>
     </section>
   </main>
 
   <footer>
     <div class="container">
-      <p>© 2026 Sulaiman. Built with simple HTML and CSS.</p>
+      <p>© 2026 Sulaiman Allemyar</p>
     </div>
   </footer>
 </body>
