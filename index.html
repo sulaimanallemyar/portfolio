@@ -320,11 +320,31 @@
     </style>
   </head>
   <body>
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-      <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <button
+      class="theme-toggle"
+      id="theme-toggle"
+      aria-label="Toggle dark mode"
+    >
+      <svg
+        class="moon-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
       </svg>
-      <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg
+        class="sun-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
         <circle cx="12" cy="12" r="5"></circle>
         <line x1="12" y1="1" x2="12" y2="3"></line>
         <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -627,39 +647,106 @@
             </ul>
           </div>
         </article>
-      </section>
 
-      <article class="card project">
-        <div>
-          <h3>SMS, OBD & IVR Banking Gateway</h3>
-          <p class="project-meta">
-            Telecom Integration • Banking • Voice & SMS • High Availability
-          </p>
-        </div>
-        <div>
-          <p>
-            Implemented integrated SMS, OBD (Outbound Dialing), and IVR
-            (Interactive Voice Response) gateway solutions for two national
-            banks, enabling pull (customer-initiated), push (notifications), and
-            automated voice services.
-          </p>
-          <ul>
-            <li>Designed scalable SMS and voice processing workflows.</li>
-            <li>
-              Enabled real-time customer interaction through SMS and automated
-              voice channels.
-            </li>
-            <li>
-              Implemented IVR flows for automated account inquiries and OBD for
-              critical alerts.
-            </li>
-            <li>
-              Ensured reliability and delivery guarantees for financial
-              messaging and voice alerts.
-            </li>
-          </ul>
-        </div>
-      </article>
+        <article class="card project">
+          <div>
+            <h3>Saraf.af: Digital Sarafi Management</h3>
+            <p class="project-meta">
+              Fintech • Regulatory Reporting • Multi-Currency • Hawala
+            </p>
+          </div>
+          <div>
+            <p>
+              A comprehensive sarafi management platform (NaqdGate) that
+              digitalizes daily exchange operations, ensures
+              regulatory-compliant reporting, and provides full operational
+              visibility for MSPs.
+            </p>
+            <ul>
+              <li>
+                Digitized core sarafi operations including exchange activities,
+                customer transactions, and cash handling.
+              </li>
+              <li>
+                Implemented multi-branch and multi-currency management with
+                centralized treasury control.
+              </li>
+              <li>
+                Developed Hawala execution and tracking modules with clear
+                settlement and partner management.
+              </li>
+              <li>Built real-time treasury monitoring.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div>
+            <h3>Muhaseb.af: Enterprise ERP & Accounting</h3>
+            <p class="project-meta">
+              ERP • Financial Management • Multi-Dimensional Reporting • Supply
+              Chain
+            </p>
+          </div>
+          <div>
+            <p>
+              Designed and developed Muhaseb, an integrated financial management
+              and ERP solution providing businesses with real-time visibility
+              and control over their entire operational lifecycle.
+            </p>
+            <ul>
+              <li>
+                Developed comprehensive supply chain modules covering
+                accounting, purchase, sales, and stock management.
+              </li>
+              <li>
+                Implemented manufacturing resource planning (MRP) for tracking
+                production stages and resource allocation.
+              </li>
+              <li>
+                Designed a modular, cloud-based architecture with multi-level
+                access and interactive data dashboards.
+              </li>
+              <li>
+                Audit trails, and multi-currency support with automatic
+                conversion.
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div>
+            <h3>SMS, OBD & IVR Banking Gateway</h3>
+            <p class="project-meta">
+              Telecom Integration • Banking • Voice & SMS • High Availability
+            </p>
+          </div>
+          <div>
+            <p>
+              Implemented integrated SMS, OBD (Outbound Dialing), and IVR
+              (Interactive Voice Response) gateway solutions for two national
+              banks, enabling pull (customer-initiated), push (notifications),
+              and automated voice services.
+            </p>
+            <ul>
+              <li>Designed scalable SMS and voice processing workflows.</li>
+              <li>
+                Enabled real-time customer interaction through SMS and automated
+                voice channels.
+              </li>
+              <li>
+                Implemented IVR flows for automated account inquiries and OBD
+                for critical alerts.
+              </li>
+              <li>
+                Ensured reliability and delivery guarantees for financial
+                messaging and voice alerts.
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
 
       <section id="philosophy">
         <div class="philosophy">
@@ -707,23 +794,24 @@
       </div>
     </footer>
     <script>
-      const themeToggle = document.getElementById('theme-toggle');
+      const themeToggle = document.getElementById("theme-toggle");
       const body = document.body;
 
       // Check for saved theme preference
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'dark') {
-        body.classList.add('dark');
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark") {
+        body.classList.add("dark");
       }
 
-      themeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark');
-        const theme = body.classList.contains('dark') ? 'dark' : 'light';
-        localStorage.setItem('theme', theme);
+      themeToggle.addEventListener("click", () => {
+        body.classList.toggle("dark");
+        const theme = body.classList.contains("dark") ? "dark" : "light";
+        localStorage.setItem("theme", theme);
       });
 
       // Set dynamic year in footer
-      document.getElementById('current-year').textContent = new Date().getFullYear();
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
     </script>
   </body>
 </html>
