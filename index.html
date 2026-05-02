@@ -15,6 +15,16 @@
         --accent-soft: #dbeafe;
       }
 
+      body.dark {
+        --bg: #0f172a;
+        --text: #f8fafc;
+        --muted: #94a3b8;
+        --card: #1e293b;
+        --border: #334155;
+        --accent: #3b82f6;
+        --accent-soft: rgba(59, 130, 246, 0.2);
+      }
+
       * {
         box-sizing: border-box;
         margin: 0;
@@ -191,6 +201,50 @@
         font-weight: 600;
       }
 
+      body.dark .tag {
+        background: #334155;
+        color: #f1f5f9;
+      }
+
+      .theme-toggle {
+        position: fixed;
+        top: 24px;
+        right: 24px;
+        z-index: 1000;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        background: var(--card);
+        border: 1px solid var(--border);
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .theme-toggle:hover {
+        transform: scale(1.1);
+      }
+
+      .theme-toggle svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .sun-icon {
+        display: none;
+      }
+
+      body.dark .moon-icon {
+        display: none;
+      }
+
+      body.dark .sun-icon {
+        display: block;
+      }
+
       .tech-list {
         list-style: none;
         margin-top: 12px;
@@ -266,6 +320,22 @@
     </style>
   </head>
   <body>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+      <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+      <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+    </button>
     <header>
       <div class="container hero">
         <div>
@@ -274,9 +344,10 @@
           >
           <h1>Sulaiman Allemyar</h1>
           <p class="subtitle">
-            Head of Research & Development leading distributed engineering teams
-            across multiple locations, specializing in backend architecture,
-            financial systems, microservices, and large-scale integrations.
+            Backend Architect and Head of R&D specializing in fintech platforms,
+            payment integrations, core banking systems (CBS), ISO 8583
+            messaging, PCI SSF compliance, and scalable microservices
+            architectures.
           </p>
           <div class="actions">
             <a
@@ -287,7 +358,7 @@
             <a class="button" href="#projects">View Projects</a>
             <a
               class="button"
-              href="https://github.com/your-username"
+              href="https://github.com/sulaimanallemyar"
               target="_blank"
               >GitHub</a
             >
@@ -321,9 +392,19 @@
           I lead cross-functional engineering teams (backend, frontend, and
           mobile) across multiple locations, building financial platforms with a
           focus on reliability, scalability, and regulatory compliance. My work
-          includes core banking integrations, EMI systems, PCI-SSF standards
+          includes core banking integrations, EMI systems, PCI SSF standards
           implementation, AWS HSM integration, SMS gateways, and
           high-availability messaging protocols like ISO 8583.
+        </p>
+      </section>
+
+      <section id="focus">
+        <h2 class="section-title">Current Focus</h2>
+        <p class="section-intro">
+          Designing and optimizing payment systems across multiple channels
+          (POS, ATM, Mobile, APS), including card-present and card-not-present
+          transaction flows, issuer/acquirer processing, and secure integration
+          with payment switches and core banking systems.
         </p>
       </section>
 
@@ -378,7 +459,7 @@
               <span class="tag">CBS Integration</span>
               <span class="tag">SMS Gateway</span>
               <span class="tag">ISO 8583</span>
-              <span class="tag">PCI-SSF</span>
+              <span class="tag">PCI SSF</span>
             </div>
           </div>
 
@@ -492,7 +573,7 @@
           <div>
             <h3>EMI Integration with Central Bank</h3>
             <p class="project-meta">
-              Regulatory Integration • Payments • AWS HSM • PCI-SSF
+              Regulatory Integration • Payments • AWS HSM • PCI SSF
             </p>
           </div>
           <div>
@@ -507,7 +588,7 @@
                 key management.
               </li>
               <li>
-                Led the implementation and alignment of PCI-SSF (Software
+                Led the implementation and alignment of PCI SSF (Software
                 Security Framework) standards.
               </li>
               <li>
@@ -557,19 +638,24 @@
         </div>
         <div>
           <p>
-            Implemented integrated SMS, OBD (Outbound Dialing), and IVR (Interactive Voice Response) gateway solutions 
-            for two national banks, enabling pull (customer-initiated), push (notifications), and automated voice services.
+            Implemented integrated SMS, OBD (Outbound Dialing), and IVR
+            (Interactive Voice Response) gateway solutions for two national
+            banks, enabling pull (customer-initiated), push (notifications), and
+            automated voice services.
           </p>
           <ul>
             <li>Designed scalable SMS and voice processing workflows.</li>
             <li>
-              Enabled real-time customer interaction through SMS and automated voice channels.
+              Enabled real-time customer interaction through SMS and automated
+              voice channels.
             </li>
             <li>
-              Implemented IVR flows for automated account inquiries and OBD for critical alerts.
+              Implemented IVR flows for automated account inquiries and OBD for
+              critical alerts.
             </li>
             <li>
-              Ensured reliability and delivery guarantees for financial messaging and voice alerts.
+              Ensured reliability and delivery guarantees for financial
+              messaging and voice alerts.
             </li>
           </ul>
         </div>
@@ -591,12 +677,12 @@
       <section id="contact">
         <h2 class="section-title">Contact</h2>
         <p class="section-intro">
-          Interested in backend architecture, financial platforms, or
-          engineering leadership discussions?
+          Available for backend architecture, fintech platform development, and
+          engineering leadership opportunities.
         </p>
         <p>
           Email:
-          <a href="mailto:sulaiman.allemyar@parsa.technology"
+          <a href="mailto:sulaiman.allemyar@gmail.com"
             >sulaiman.allemyar@gmail.com</a
           >
         </p>
@@ -620,5 +706,21 @@
         <p>© 2026 Sulaiman Allemyar</p>
       </div>
     </footer>
+    <script>
+      const themeToggle = document.getElementById('theme-toggle');
+      const body = document.body;
+
+      // Check for saved theme preference
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        body.classList.add('dark');
+      }
+
+      themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        const theme = body.classList.contains('dark') ? 'dark' : 'light';
+        localStorage.setItem('theme', theme);
+      });
+    </script>
   </body>
 </html>
