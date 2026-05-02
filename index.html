@@ -1,506 +1,624 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sulaiman Allemyar | Head of R&D | Backend Architect</title>
-  <style>
-    :root {
-      --bg: #f8fafc;
-      --text: #0f172a;
-      --muted: #475569;
-      --card: #ffffff;
-      --border: #e2e8f0;
-      --accent: #2563eb;
-      --accent-soft: #dbeafe;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      width: min(1100px, 92%);
-      margin: 0 auto;
-    }
-
-    header {
-      padding: 72px 0 56px;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 16px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    h1 {
-      font-size: clamp(40px, 6vw, 68px);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-      margin-bottom: 20px;
-    }
-
-    .subtitle {
-      font-size: 22px;
-      color: var(--muted);
-      max-width: 720px;
-      margin-bottom: 32px;
-    }
-
-    .actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 18px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: var(--card);
-      font-weight: 700;
-    }
-
-    .button.primary {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-    }
-
-    .profile-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 28px;
-      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
-      text-align: center;
-    }
-
-    .profile-img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border: 4px solid var(--accent-soft);
-    }
-
-    .profile-card h2 {
-      font-size: 20px;
-      margin-bottom: 16px;
-      text-align: left;
-    }
-
-    .profile-card p {
-      color: var(--muted);
-      margin-bottom: 10px;
-      text-align: left;
-    }
-
-    section {
-      padding: 42px 0;
-    }
-
-    .section-title {
-      font-size: 30px;
-      margin-bottom: 12px;
-      letter-spacing: -0.03em;
-    }
-
-    .section-intro {
-      color: var(--muted);
-      max-width: 760px;
-      margin-bottom: 26px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 24px;
-    }
-
-    .card h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: var(--muted);
-    }
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .tag {
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: #f1f5f9;
-      color: #334155;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .tech-list {
-      list-style: none;
-      margin-top: 12px;
-    }
-
-    .tech-list li {
-      font-size: 14px;
-      margin-bottom: 6px;
-      color: var(--muted);
-      border-bottom: 1px solid #f1f5f9;
-      padding-bottom: 4px;
-    }
-
-    .tech-list li strong {
-      color: var(--text);
-      display: block;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .project {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 24px;
-      align-items: start;
-      margin-bottom: 18px;
-    }
-
-    .project-meta {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .project ul {
-      margin-left: 18px;
-      color: var(--muted);
-    }
-
-    .philosophy {
-      background: #0f172a;
-      color: white;
-      border-radius: 28px;
-      padding: 36px;
-    }
-
-    .philosophy p {
-      color: #cbd5e1;
-      max-width: 850px;
-    }
-
-    footer {
-      padding: 42px 0 60px;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-      margin-top: 28px;
-    }
-
-    @media (max-width: 850px) {
-      .hero,
-      .project {
-        grid-template-columns: 1fr;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sulaiman Allemyar | Head of R&D | Backend Architect</title>
+    <style>
+      :root {
+        --bg: #f8fafc;
+        --text: #0f172a;
+        --muted: #475569;
+        --card: #ffffff;
+        --border: #e2e8f0;
+        --accent: #2563eb;
+        --accent-soft: #dbeafe;
       }
 
-      .grid {
-        grid-template-columns: 1fr;
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          Inter,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .container {
+        width: min(1100px, 92%);
+        margin: 0 auto;
       }
 
       header {
-        padding-top: 48px;
+        padding: 72px 0 56px;
       }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container hero">
-      <div>
-        <span class="eyebrow">Backend Engineering • Banking Systems • R&D Leadership</span>
-        <h1>Sulaiman Allemyar</h1>
-        <p class="subtitle">
-          Head of Research & Development leading distributed engineering teams across multiple locations,
-          specializing in backend architecture, financial systems, microservices, and large-scale integrations.
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 48px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 16px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      h1 {
+        font-size: clamp(40px, 6vw, 68px);
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+        margin-bottom: 20px;
+      }
+
+      .subtitle {
+        font-size: 22px;
+        color: var(--muted);
+        max-width: 720px;
+        margin-bottom: 32px;
+      }
+
+      .actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 18px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        font-weight: 700;
+      }
+
+      .button.primary {
+        background: var(--accent);
+        color: white;
+        border-color: var(--accent);
+      }
+
+      .profile-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+        text-align: center;
+      }
+
+      .profile-img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 20px;
+        border: 4px solid var(--accent-soft);
+      }
+
+      .profile-card h2 {
+        font-size: 20px;
+        margin-bottom: 16px;
+        text-align: left;
+      }
+
+      .profile-card p {
+        color: var(--muted);
+        margin-bottom: 10px;
+        text-align: left;
+      }
+
+      section {
+        padding: 42px 0;
+      }
+
+      .section-title {
+        font-size: 30px;
+        margin-bottom: 12px;
+        letter-spacing: -0.03em;
+      }
+
+      .section-intro {
+        color: var(--muted);
+        max-width: 760px;
+        margin-bottom: 26px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 24px;
+      }
+
+      .card h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        color: var(--muted);
+      }
+
+      .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .tag {
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: #f1f5f9;
+        color: #334155;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .tech-list {
+        list-style: none;
+        margin-top: 12px;
+      }
+
+      .tech-list li {
+        font-size: 14px;
+        margin-bottom: 6px;
+        color: var(--muted);
+        border-bottom: 1px solid #f1f5f9;
+        padding-bottom: 4px;
+      }
+
+      .tech-list li strong {
+        color: var(--text);
+        display: block;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .project {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 24px;
+        align-items: start;
+        margin-bottom: 18px;
+      }
+
+      .project-meta {
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .project ul {
+        margin-left: 18px;
+        color: var(--muted);
+      }
+
+      .philosophy {
+        background: #0f172a;
+        color: white;
+        border-radius: 28px;
+        padding: 36px;
+      }
+
+      .philosophy p {
+        color: #cbd5e1;
+        max-width: 850px;
+      }
+
+      footer {
+        padding: 42px 0 60px;
+        color: var(--muted);
+        border-top: 1px solid var(--border);
+        margin-top: 28px;
+      }
+
+      @media (max-width: 850px) {
+        .hero,
+        .project {
+          grid-template-columns: 1fr;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          padding-top: 48px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container hero">
+        <div>
+          <span class="eyebrow"
+            >Backend Engineering • Banking Systems • R&D Leadership</span
+          >
+          <h1>Sulaiman Allemyar</h1>
+          <p class="subtitle">
+            Head of Research & Development leading distributed engineering teams
+            across multiple locations, specializing in backend architecture,
+            financial systems, microservices, and large-scale integrations.
+          </p>
+          <div class="actions">
+            <a
+              class="button primary"
+              href="mailto:sulaiman.allemyar@parsa.technology"
+              >Contact Me</a
+            >
+            <a class="button" href="#projects">View Projects</a>
+            <a
+              class="button"
+              href="https://github.com/your-username"
+              target="_blank"
+              >GitHub</a
+            >
+          </div>
+        </div>
+
+        <aside class="profile-card">
+          <img
+            src="images/profile.png"
+            alt="Sulaiman Allemyar"
+            class="profile-img"
+          />
+          <h2>Profile</h2>
+          <p><strong>Role:</strong> Head of R&D</p>
+          <p>
+            <strong>Focus:</strong> Backend systems, banking integrations,
+            transaction workflows
+          </p>
+          <p>
+            <strong>Strength:</strong> Turning complex business rules into
+            reliable software systems
+          </p>
+        </aside>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-intro">
+          I lead cross-functional engineering teams (backend, frontend, and
+          mobile) across multiple locations, building financial platforms with a
+          focus on reliability, scalability, and regulatory compliance. My work
+          includes core banking integrations, EMI systems, PCI-SSF standards
+          implementation, AWS HSM integration, SMS gateways, and
+          high-availability messaging protocols like ISO 8583.
         </p>
-        <div class="actions">
-          <a class="button primary" href="mailto:sulaiman.allemyar@parsa.technology">Contact Me</a>
-          <a class="button" href="#projects">View Projects</a>
-          <a class="button" href="https://github.com/your-username" target="_blank">GitHub</a>
-        </div>
-      </div>
+      </section>
 
-      <aside class="profile-card">
-        <img src="images/profile.png" alt="Sulaiman Allemyar" class="profile-img">
-        <h2>Profile</h2>
-        <p><strong>Role:</strong> Head of R&D</p>
-        <p><strong>Focus:</strong> Backend systems, banking integrations, transaction workflows</p>
-        <p><strong>Strength:</strong> Turning complex business rules into reliable software systems</p>
-      </aside>
-    </div>
-  </header>
-
-  <main class="container">
-    <section id="about">
-      <h2 class="section-title">About Me</h2>
-      <p class="section-intro">
-        I lead cross-functional engineering teams (backend, frontend, and mobile) across multiple locations,
-        building financial platforms with a focus on reliability, scalability, and regulatory compliance.
-        My work includes core banking integrations, EMI systems, PCI-SSF standards implementation, AWS HSM integration, 
-        and high-availability messaging protocols like ISO 8583.
-      </p>
-    </section>
-
-    <section id="experience">
-      <h2 class="section-title">Industry Experience</h2>
-      <p class="section-intro">
-        Developed enterprise software systems for companies across multiple business domains,
-        delivering integrated solutions that support end-to-end operations.
-      </p>
-      <div class="grid">
-        <div class="card">
-          <h3>Business Systems</h3>
-          <p>
-            Built and delivered systems covering Sales, Procurement, Manufacturing,
-            Inventory Management, and Core Accounting, enabling organizations to
-            manage their full operational lifecycle within a unified platform.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="strengths">
-      <h2 class="section-title">Technical Strengths</h2>
-      <p class="section-intro">
-        I combine hands-on backend development with engineering leadership and system design thinking.
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Backend Architecture</h3>
-          <p>Designing clean, maintainable backend services with strong domain boundaries and clear integration contracts.</p>
-          <div class="tag-list">
-            <span class="tag">Java</span>
-            <span class="tag">Spring Boot</span>
-            <span class="tag">REST APIs</span>
+      <section id="experience">
+        <h2 class="section-title">Industry Experience</h2>
+        <p class="section-intro">
+          Developed enterprise software systems for companies across multiple
+          business domains, delivering integrated solutions that support
+          end-to-end operations.
+        </p>
+        <div class="grid">
+          <div class="card">
+            <h3>Business Systems</h3>
+            <p>
+              Built and delivered systems covering Sales, Procurement,
+              Manufacturing, Inventory Management, and Core Accounting, enabling
+              organizations to manage their full operational lifecycle within a
+              unified platform.
+            </p>
           </div>
         </div>
+      </section>
 
-        <div class="card">
-          <h3>Financial Systems</h3>
-          <p>Building transaction workflows, accounting logic, commission handling, and core banking integrations.</p>
-          <div class="tag-list">
-            <span class="tag">CBS Integration</span>
-            <span class="tag">ISO 8583</span>
-            <span class="tag">PCI-SSF</span>
-            <span class="tag">Transactions</span>
-            <span class="tag">Audit Logs</span>
+      <section id="strengths">
+        <h2 class="section-title">Technical Strengths</h2>
+        <p class="section-intro">
+          I combine hands-on backend development with engineering leadership and
+          system design thinking.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Backend Architecture</h3>
+            <p>
+              Designing clean, maintainable backend services with strong domain
+              boundaries and clear integration contracts.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Java</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">REST APIs</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Financial Systems</h3>
+            <p>
+              Building transaction workflows, accounting logic, commission
+              handling, and core banking integrations.
+            </p>
+            <div class="tag-list">
+              <span class="tag">CBS Integration</span>
+              <span class="tag">SMS Gateway</span>
+              <span class="tag">ISO 8583</span>
+              <span class="tag">PCI-SSF</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Engineering Leadership</h3>
+            <p>
+              Leading distributed teams across multiple locations, aligning
+              backend, frontend, and mobile development toward unified system
+              architecture and delivery goals.
+            </p>
+            <div class="tag-list">
+              <span class="tag">R&D Leadership</span>
+              <span class="tag">Distributed Teams</span>
+              <span class="tag">Cross-Functional</span>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div class="card">
-          <h3>Engineering Leadership</h3>
-          <p>Leading distributed teams across multiple locations, aligning backend, frontend, and mobile development toward unified system architecture and delivery goals.</p>
-          <div class="tag-list">
-            <span class="tag">R&D Leadership</span>
-            <span class="tag">Distributed Teams</span>
-            <span class="tag">Cross-Functional</span>
+      <section id="tech-stack">
+        <h2 class="section-title">Backend Architecture Stack</h2>
+        <p class="section-intro">
+          Comprehensive technology stack utilized for building resilient,
+          scalable, and secure financial systems.
+        </p>
+        <div class="grid">
+          <div class="card">
+            <h3>Core Backend</h3>
+            <ul class="tech-list">
+              <li><strong>Language</strong> Java 8, 11, 17</li>
+              <li><strong>Framework</strong> Spring Boot</li>
+              <li><strong>Database</strong> MySQL, Postgres, MongoDB</li>
+              <li>
+                <strong>ORM & Data</strong> Hibernate, Spring Data JPA,
+                Liquibase
+              </li>
+              <li><strong>Build Tool</strong> Maven</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Security & Architecture</h3>
+            <ul class="tech-list">
+              <li>
+                <strong>Authentication</strong> Spring Security, JWT, OAuth2,
+                Keycloak
+              </li>
+              <li>
+                <strong>Microservices</strong> Spring Cloud (K8s Client, Feign,
+                Load Balancer)
+              </li>
+              <li>
+                <strong>API Standards</strong> RESTful, OpenAPI 3.0 (Swagger)
+              </li>
+              <li>
+                <strong>Message Broker</strong> Apache Kafka (Event-driven)
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Storage & Performance</h3>
+            <ul class="tech-list">
+              <li><strong>File Storage</strong> MinIO (S3-compatible)</li>
+              <li><strong>Caching</strong> Redis, Ehcache, JCache</li>
+              <li><strong>Resilience</strong> Bucket4j (Rate Limiting)</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>DevOps & Monitoring</h3>
+            <ul class="tech-list">
+              <li>
+                <strong>Infrastructure</strong> Docker, Docker Compose,
+                Kubernetes
+              </li>
+              <li>
+                <strong>Observability</strong> Prometheus, Actuator, Micrometer
+              </li>
+              <li><strong>Logging</strong> Logstash, Logback</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Specialized Libraries</h3>
+            <ul class="tech-list">
+              <li><strong>Mapping & Tools</strong> MapStruct, Lombok</li>
+              <li>
+                <strong>Payment Tools</strong> AWS SDK (Payment Cryptography)
+              </li>
+              <li>
+                <strong>Document Processing</strong> Apache POI (Excel),
+                OpenHTMLtoPDF (PDF Generation)
+              </li>
+              <li>
+                <strong>Error Handling</strong> Zalando Problem Spring Web
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="tech-stack">
-      <h2 class="section-title">Backend Architecture Stack</h2>
-      <p class="section-intro">
-        Comprehensive technology stack utilized for building resilient, scalable, and secure financial systems.
-      </p>
-      <div class="grid">
-        <div class="card">
-          <h3>Core Backend</h3>
-          <ul class="tech-list">
-            <li><strong>Language</strong> Java 17</li>
-            <li><strong>Framework</strong> Spring Boot 3.2.5 / 3.5.3</li>
-            <li><strong>Database</strong> MySQL 8.4+</li>
-            <li><strong>ORM & Data</strong> Hibernate 6.4, Spring Data JPA, Liquibase</li>
-            <li><strong>Build Tool</strong> Maven</li>
-          </ul>
-        </div>
+      <section id="projects">
+        <h2 class="section-title">Selected Projects</h2>
+        <p class="section-intro">
+          Key implementations across banking, EMI systems, and large-scale
+          backend architectures.
+        </p>
 
-        <div class="card">
-          <h3>Security & Architecture</h3>
-          <ul class="tech-list">
-            <li><strong>Authentication</strong> Spring Security, JWT, OAuth2</li>
-            <li><strong>Microservices</strong> Spring Cloud (K8s Client, Feign, Load Balancer)</li>
-            <li><strong>API Standards</strong> RESTful, OpenAPI 3.0 (Swagger)</li>
-            <li><strong>Message Broker</strong> Apache Kafka (Event-driven)</li>
-          </ul>
-        </div>
+        <article class="card project">
+          <div>
+            <h3>EMI Integration with Central Bank</h3>
+            <p class="project-meta">
+              Regulatory Integration • Payments • AWS HSM • PCI-SSF
+            </p>
+          </div>
+          <div>
+            <p>
+              Successfully completed integration of two Electronic Money
+              Institutions (EMIs) with Da Afghanistan Bank, ensuring compliance
+              with regulatory requirements and secure financial data exchange.
+            </p>
+            <ul>
+              <li>
+                Implemented AWS CloudHSM for secure cryptographic operations and
+                key management.
+              </li>
+              <li>
+                Led the implementation and alignment of PCI-SSF (Software
+                Security Framework) standards.
+              </li>
+              <li>
+                Handled complex regulatory and integration requirements for
+                secure communication.
+              </li>
+              <li>
+                Delivered production-ready systems aligned with central bank
+                standards.
+              </li>
+            </ul>
+          </div>
+        </article>
 
-        <div class="card">
-          <h3>Storage & Performance</h3>
-          <ul class="tech-list">
-            <li><strong>File Storage</strong> MinIO (S3-compatible)</li>
-            <li><strong>Caching</strong> Redis, Ehcache, JCache</li>
-            <li><strong>Resilience</strong> Bucket4j (Rate Limiting)</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>DevOps & Monitoring</h3>
-          <ul class="tech-list">
-            <li><strong>Infrastructure</strong> Docker, Docker Compose, Kubernetes</li>
-            <li><strong>Observability</strong> Prometheus, Actuator, Micrometer</li>
-            <li><strong>Logging</strong> Logstash, Logback</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Specialized Libraries</h3>
-          <ul class="tech-list">
-            <li><strong>Mapping & Tools</strong> MapStruct, Lombok</li>
-            <li><strong>Payment Tools</strong> AWS SDK (Payment Cryptography), ZXing (QR Codes)</li>
-            <li><strong>Document Processing</strong> Apache POI (Excel), OpenHTMLtoPDF (PDF Generation)</li>
-            <li><strong>Error Handling</strong> Zalando Problem Spring Web</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2 class="section-title">Selected Projects</h2>
-      <p class="section-intro">
-        Key implementations across banking, EMI systems, and large-scale backend architectures.
-      </p>
+        <article class="card project">
+          <div>
+            <h3>Microservices Architecture for EMI Platforms</h3>
+            <p class="project-meta">
+              Microservices • Scalability • Distributed Systems
+            </p>
+          </div>
+          <div>
+            <p>
+              Designed and implemented microservice architecture for EMI
+              platforms to improve scalability, maintainability, and independent
+              service deployment.
+            </p>
+            <ul>
+              <li>
+                Decomposed monolithic systems into domain-driven services.
+              </li>
+              <li>Improved system resilience and fault isolation.</li>
+              <li>
+                Enabled faster development cycles and independent deployments.
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
 
       <article class="card project">
         <div>
-          <h3>SMS Banking Gateway</h3>
-          <p class="project-meta">Telecom Integration • Banking • High Availability</p>
+          <h3>SMS, OBD & IVR Banking Gateway</h3>
+          <p class="project-meta">
+            Telecom Integration • Banking • Voice & SMS • High Availability
+          </p>
         </div>
         <div>
           <p>
-            Implemented SMS gateway solutions for two national banks, enabling both pull (customer-initiated SMS banking)
-            and push (system-triggered notifications) features.
+            Implemented integrated SMS, OBD (Outbound Dialing), and IVR (Interactive Voice Response) gateway solutions 
+            for two national banks, enabling pull (customer-initiated), push (notifications), and automated voice services.
           </p>
           <ul>
-            <li>Designed scalable SMS processing workflows.</li>
-            <li>Enabled real-time customer interaction through SMS channels.</li>
-            <li>Ensured reliability and delivery guarantees for financial messaging.</li>
+            <li>Designed scalable SMS and voice processing workflows.</li>
+            <li>
+              Enabled real-time customer interaction through SMS and automated voice channels.
+            </li>
+            <li>
+              Implemented IVR flows for automated account inquiries and OBD for critical alerts.
+            </li>
+            <li>
+              Ensured reliability and delivery guarantees for financial messaging and voice alerts.
+            </li>
           </ul>
         </div>
       </article>
 
-      <article class="card project">
-        <div>
-          <h3>EMI Integration with Central Bank</h3>
-          <p class="project-meta">Regulatory Integration • Payments • AWS HSM • PCI-SSF</p>
-        </div>
-        <div>
+      <section id="philosophy">
+        <div class="philosophy">
+          <h2 class="section-title">Engineering Philosophy</h2>
           <p>
-            Successfully completed integration of two Electronic Money Institutions (EMIs) with Da Afghanistan Bank,
-            ensuring compliance with regulatory requirements and secure financial data exchange.
+            I believe strong backend systems are built through clear domain
+            modeling, predictable failure handling, practical observability, and
+            simple designs that are easy for teams to understand and maintain.
+            In financial systems, correctness and traceability are not optional
+            — they are part of the product.
           </p>
-          <ul>
-            <li>Implemented AWS CloudHSM for secure cryptographic operations and key management.</li>
-            <li>Led the implementation and alignment of PCI-SSF (Software Security Framework) standards.</li>
-            <li>Handled complex regulatory and integration requirements for secure communication.</li>
-            <li>Delivered production-ready systems aligned with central bank standards.</li>
-          </ul>
         </div>
-      </article>
+      </section>
 
-      <article class="card project">
-        <div>
-          <h3>Microservices Architecture for EMI Platforms</h3>
-          <p class="project-meta">Microservices • Scalability • Distributed Systems</p>
-        </div>
-        <div>
-          <p>
-            Designed and implemented microservice architecture for EMI platforms to improve scalability,
-            maintainability, and independent service deployment.
-          </p>
-          <ul>
-            <li>Decomposed monolithic systems into domain-driven services.</li>
-            <li>Improved system resilience and fault isolation.</li>
-            <li>Enabled faster development cycles and independent deployments.</li>
-          </ul>
-        </div>
-      </article>
-    </section>
-
-    <section id="philosophy">
-      <div class="philosophy">
-        <h2 class="section-title">Engineering Philosophy</h2>
+      <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-intro">
+          Interested in backend architecture, financial platforms, or
+          engineering leadership discussions?
+        </p>
         <p>
-          I believe strong backend systems are built through clear domain modeling, predictable failure handling,
-          practical observability, and simple designs that are easy for teams to understand and maintain.
-          In financial systems, correctness and traceability are not optional — they are part of the product.
+          Email:
+          <a href="mailto:sulaiman.allemyar@parsa.technology"
+            >sulaiman.allemyar@gmail.com</a
+          >
         </p>
+        <p>
+          GitHub:
+          <a href="https://github.com/sulaimanallemyar" target="_blank"
+            >github.com/sulaimanallemyar</a
+          >
+        </p>
+        <p>
+          LinkedIn:
+          <a href="https://af.linkedin.com/in/sulaiman-allemyar" target="_blank"
+            >https://af.linkedin.com/in/sulaiman-allemyar</a
+          >
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© 2026 Sulaiman Allemyar</p>
       </div>
-    </section>
-
-    <section id="contact">
-      <h2 class="section-title">Contact</h2>
-      <p class="section-intro">
-        Interested in backend architecture, financial platforms, or engineering leadership discussions?
-      </p>
-      <p>Email: <a href="mailto:sulaiman.allemyar@parsa.technology">sulaiman.allemyar@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/sulaimanallemyar" target="_blank">github.com/sulaimanallemyar</a></p>
-      <p>LinkedIn: <a href="https://af.linkedin.com/in/sulaiman-allemyar" target="_blank">https://af.linkedin.com/in/sulaiman-allemyar</a></p>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>© 2026 Sulaiman Allemyar</p>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
